@@ -1,6 +1,7 @@
 -- ghci version 8.6.1 
-comp :: [Int] -> [Int] -> Bool
--- checks if x is a subsequence of y
-comp x [] = False
-comp [] y = True
-comp (x:xs) (y:ys) = if x == y then comp xs ys else comp (x:xs) ys
+subseq :: [Int] -> [Int] -> Bool
+-- testet ob x eine subsequenz von y ist.
+-- problem: funktioniert nicht korrekt wenn x und y nur noch leere listen sind. 
+subseq x [] = False
+subseq [] y = True
+subseq (x:xs) (y:ys) = if x == y then subseq xs ys else subseq (x:xs) ys
